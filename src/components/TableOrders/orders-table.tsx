@@ -1,20 +1,11 @@
-import { Trash2Icon } from 'lucide-react'
-
-import { Button } from '../ui/button'
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from '../ui/table'
+import { Table, TableBody, TableHead, TableHeader, TableRow } from '../ui/table'
+import { OrderTableRow } from './orders-table-row'
 
 export function OrdersTable() {
   return (
     <Table>
       <TableHeader>
-        <TableRow className="bg-zinc-50">
+        <TableRow className="bg-zinc-100">
           <TableHead className="font-bold text-zinc-950 text-center">
             Núm. Pedido
           </TableHead>
@@ -37,28 +28,7 @@ export function OrdersTable() {
       </TableHeader>
       <TableBody>
         {Array.from({ length: 10 }).map((_, i) => {
-          return (
-            <TableRow key={i}>
-              <TableCell className="text-blue-500 font-bold text-center">
-                123456
-              </TableCell>
-              <TableCell className="font-bold text-center">R$200,00</TableCell>
-              <TableCell className="font-medium text-center">
-                22/04/2024
-              </TableCell>
-              <TableCell className="font-medium text-center">
-                Dinheiro
-              </TableCell>
-              <TableCell className="font-medium text-center">
-                Entregue
-              </TableCell>
-              <TableCell className="text-center">
-                <Button variant="ghost" size="sm">
-                  <Trash2Icon />
-                </Button>
-              </TableCell>
-            </TableRow>
-          )
+          return <OrderTableRow key={i} />
         })}
       </TableBody>
     </Table>

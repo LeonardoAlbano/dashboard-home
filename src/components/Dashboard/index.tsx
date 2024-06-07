@@ -1,7 +1,7 @@
-import { FilterIcon, Search } from 'lucide-react'
+import { Search } from 'lucide-react'
 
 import { OrdersTable } from '../TableOrders/orders-table'
-import { Button } from '../ui/button'
+import { OrderTableFilters } from '../TableOrders/orders-table-filter'
 import { Input } from '../ui/input'
 import { OrdersCard } from './cards/orders-card'
 import { OrdersForDelivery } from './cards/orders-for-delivery'
@@ -63,23 +63,9 @@ export function Dashboard() {
           </h1>
         </div>
 
-        <div className="space-y-2">
-          <form action="" className="flex gap-5 justify-center items-center">
-            <div className="flex w-full items-center gap-2 rounded-2xl bg-white border border-zinc-300 px-4 py-2 shadow-sm">
-              <Input
-                className="flex-1 border-0 h-5 w-5 bg-transparent p-0 text-zinc-900 placeholder-black"
-                placeholder="Pesquise aqui"
-              />
-              <Search className="h-5 w-5 text-blue-400" />
-            </div>
-
-            <Button className="w-[180px] h-9">
-              <FilterIcon size={20} className="mr-2" />
-              Filtrar
-            </Button>
-          </form>
-
-          <div className="border rounded-3xl ">
+        <div className="space-y-6">
+          <OrderTableFilters />
+          <div className="bg-white border-b-4 border-zinc-400">
             <OrdersTable />
           </div>
         </div>
