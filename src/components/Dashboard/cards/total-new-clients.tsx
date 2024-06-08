@@ -7,7 +7,7 @@ import {
 
 export function TotalNewClients() {
   return (
-    <Card>
+    <Card className="shadow-sm border-none">
       <CardHeader className=" justify-center gap-y-2">
         <CardDescription className="text-lg text-zinc-800 font-medium">
           Total

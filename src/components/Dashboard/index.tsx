@@ -2,6 +2,7 @@ import { Search } from 'lucide-react'
 
 import { OrdersTable } from '../TableOrders/orders-table'
 import { OrderTableFilters } from '../TableOrders/orders-table-filter'
+import { Pagination } from '../TableOrders/pagination'
 import { Input } from '../ui/input'
 import { OrdersCard } from './cards/orders-card'
 import { OrdersForDelivery } from './cards/orders-for-delivery'
@@ -13,7 +14,7 @@ import { TotalProducts } from './cards/total-products'
 
 export function Dashboard() {
   return (
-    <main className="pb-12 bg-blue-100">
+    <main className="pb-12 bg-sky-50 grid grid-cols-1 lg:col-start-2 lg:pt-0 pt-20">
       <div className="p-6 bg-blue-800 flex flex-col md:flex-row gap-3">
         <div className="flex w-full items-center gap-2 rounded-2xl bg-white border border-zinc-300 px-4 py-2 shadow-sm">
           <Input
@@ -35,7 +36,7 @@ export function Dashboard() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-4 p-7">
+      <div className="flex flex-col gap-4 p-4 lg:p-7">
         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4">
           <OrdersCard />
           <StockCard />
@@ -43,11 +44,11 @@ export function Dashboard() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-4 p-7">
+      <div className="flex flex-col gap-4 p-4 lg:p-7">
         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4">
           <OrdersForDelivery />
-          <div className="space-y-4 ">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 ">
+          <div className="space-y-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
               <TotalProducts />
               <TotalMinimumStock />
             </div>
@@ -56,18 +57,20 @@ export function Dashboard() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-4 px-7">
-        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4">
-          <h1 className="text-3xl font-bold  tracking-tight">
+      <div className="flex flex-col gap-4 p-4 lg:px-7">
+        <div className="flex justify-between items-center">
+          <h1 className="text-2xl lg:text-3xl font-bold tracking-tight">
             Lista de pedidos
           </h1>
         </div>
 
-        <div className="space-y-6">
+        <div>
           <OrderTableFilters />
           <div className="bg-white border-b-4 border-zinc-400">
             <OrdersTable />
           </div>
+
+          <Pagination pageIndex={0} totalCount={105} perPage={10} />
         </div>
       </div>
     </main>

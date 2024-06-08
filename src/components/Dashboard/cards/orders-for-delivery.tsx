@@ -8,7 +8,7 @@ import {
 
 export function OrdersForDelivery() {
   return (
-    <Card className="flex p-4 item-center">
+    <Card className="flex p-4 item-center shadow-sm border-none">
       <CardContent className="flex">
         <img
           src="/src/assets/logo-stock-men.svg"
