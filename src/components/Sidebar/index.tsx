@@ -12,7 +12,7 @@ import { MainNavigation } from './MainNavigation'
 
 export function Sidebar() {
   return (
-    <Collapsible className="border-r data-[state=open]:h-screen data-[state=open]:bottom-0 lg:data-[state=closed]:bottom-0 lg:data-[state=closed]:h-screen border-zinc-200 px-5 py-4 lg:py-6 flex flex-col gap-6 fixed left-0 top-0 right-0 z-20 bg-white lg:right-auto lg:relative lg:w-80 lg:border-r">
+    <Collapsible className="fixed left-0 right-0 top-0 z-20 flex flex-col gap-6 border-b border-zinc-200 bg-white p-4 data-[state=open]:bottom-0 lg:right-auto lg:items-center lg:border-r lg:data-[state=closed]:bottom-0">
       <div className="flex items-center justify-between">
         <LogoTrajeton />
         <CollapsibleTrigger asChild className="lg:hidden">
@@ -23,7 +23,7 @@ export function Sidebar() {
       </div>
       <CollapsibleContent
         forceMount
-        className="data-[state=closed]:hidden lg:data-[state=closed]:flex flex flex-col gap-6"
+        className="flex flex-1 flex-col gap-6 data-[state=closed]:hidden lg:data-[state=closed]:flex"
       >
         <MainNavigation />
       </CollapsibleContent>

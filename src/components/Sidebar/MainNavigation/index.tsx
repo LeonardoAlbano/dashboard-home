@@ -1,5 +1,7 @@
 import {
+  ArrowRight,
   Box,
+  ChevronDown,
   GraduationCap,
   Home,
   PackageOpen,
@@ -7,17 +9,30 @@ import {
   UsersRound,
 } from 'lucide-react'
 
+import { CollapsibleTrigger } from '@/components/ui/collapsible'
+
 import { NavItem } from './NavItem'
 
 export function MainNavigation() {
   return (
-    <nav className="space-y-4">
+    <nav className="space-y-4 lg:flex lg:flex-col lg:items-center ">
       <NavItem title="Home" icon={Home} />
       <NavItem title="Estoque" icon={Box} />
       <NavItem title="Categorias" icon={Shapes} />
       <NavItem title="Escolas" icon={GraduationCap} />
-      <NavItem title="Gestão de pedidos" icon={PackageOpen} />
-      <NavItem title="Usuários" icon={UsersRound} />
+
+      <div className="flex items-center group hover:bg-zinc-50 cursor-pointer pr-2">
+        <NavItem title="Gestão de pedidos" icon={PackageOpen} />
+        <ChevronDown className="ml-auto h-5 w-5 text-zinc-400 group-hover:text-primary md:hidden " />
+      </div>
+
+      <div className="flex items-center group hover:bg-zinc-50 cursor-pointer pr-2">
+        <NavItem title="Usuários" icon={UsersRound} />
+        <ChevronDown className="ml-auto h-5 w-5 text-zinc-400 group-hover:text-primary md:hidden " />
+      </div>
+      <CollapsibleTrigger className="lg:hidden">
+        <NavItem title="Recolher" icon={ArrowRight} />
+      </CollapsibleTrigger>
     </nav>
   )
 }

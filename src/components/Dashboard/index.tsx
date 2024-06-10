@@ -14,8 +14,8 @@ import { TotalProducts } from './cards/total-products'
 
 export function Dashboard() {
   return (
-    <main className="pb-12 bg-sky-50 grid grid-cols-1 lg:col-start-2 lg:pt-0 pt-20">
-      <div className="p-6 bg-blue-800 flex flex-col md:flex-row gap-3">
+    <main className="pb-12 bg-sky-50  lg:col-start-2 pt-20 lg:pt-0 ">
+      <div className="p-6 bg-blue-900 grid grid-cols-[1fr_200px] md:flex-row gap-3 shadow-md">
         <div className="flex w-full items-center gap-2 rounded-2xl bg-white border border-zinc-300 px-4 py-2 shadow-sm">
           <Input
             className="flex-1 border-0 h-5 w-5 bg-transparent p-0 text-zinc-900 placeholder-black"
@@ -23,7 +23,7 @@ export function Dashboard() {
           />
           <Search className="h-5 w-5 text-blue-400" />
         </div>
-        <div className="flex gap-3 items-center whitespace-nowrap px-6">
+        <div className="flex gap-3 items-center whitespace-nowrap px-6 ">
           <img
             className="rounded-full w-10 h-10"
             src="http://github.com/leonardoalbano.png"
