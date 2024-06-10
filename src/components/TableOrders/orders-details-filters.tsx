@@ -12,7 +12,7 @@ import { Separator } from '../ui/separator'
 
 export function OrderDetailsFilters() {
   return (
-    <DialogContent>
+    <DialogContent className="w-[450px]">
       <DialogHeader>
         <DialogTitle>Filtro</DialogTitle>
       </DialogHeader>
@@ -46,14 +46,27 @@ export function OrderDetailsFilters() {
           <label htmlFor="filterSearch">Mais de 30 dias</label>
         </div>
 
-        <div className="flex gap-3 items-center text-lg ">
-          <Checkbox id="filterSearch" className="rounded-full w-5 h-5" />
-          <label htmlFor="filterSearch">Personalizado</label>
-          <data value=""></data>
+        <div className="flex flex-col gap-3 text-lg">
+          <div className="flex items-center gap-3">
+            <Checkbox
+              id="filterSearchCustom"
+              className="rounded-full w-5 h-5"
+            />
+            <label htmlFor="filterSearchCustom">Personalizado</label>
+          </div>
+          <div
+            className="space-x-3
+"
+          >
+            <span>de</span>
+            <input type="date" className="border rounded p-1" />
+            <span>à</span>
+            <input type="date" className="border rounded p-1" />
+          </div>
         </div>
         <Separator orientation="horizontal" />
 
-        <h1>Por Status</h1>
+        <h1 className="font-semibold text-xl">Por Status</h1>
 
         <Select>
           <SelectTrigger>
@@ -61,24 +74,26 @@ export function OrderDetailsFilters() {
           </SelectTrigger>
 
           <SelectContent>
-            <SelectItem
-              value="processing"
-              className="bg-blue-200 rounded-full text-blue-500 font-normal"
-            >
-              Em preparação
-            </SelectItem>
-            <SelectItem
-              value="delivering"
-              className="bg-orange-200 text-orange-500 font-normal rounded-ful"
-            >
-              Em entrega
-            </SelectItem>
-            <SelectItem
-              value="delivered"
-              className="bg-green-200 rounded-ful text-green-500 font-normal"
-            >
-              Entregue
-            </SelectItem>
+            <div className="space-y-3">
+              <SelectItem
+                value="processing"
+                className="bg-blue-200 rounded-full text-blue-500 font-normal text-center"
+              >
+                Em preparação
+              </SelectItem>
+              <SelectItem
+                value="delivering"
+                className="bg-orange-200 rounded-full text-orange-500 font-normal "
+              >
+                Em entrega
+              </SelectItem>
+              <SelectItem
+                value="delivered"
+                className="bg-green-200 rounded-full text-green-500 font-normal"
+              >
+                Entregue
+              </SelectItem>
+            </div>
           </SelectContent>
         </Select>
 
